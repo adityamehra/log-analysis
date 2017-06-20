@@ -1,8 +1,16 @@
+# Prerequisites
+
+- VirtualBox, see [VirtualBox](#install-virtualbox) section
+- Vagrant, see [Vagrant](#install-vagrant) section
+- VM configuration, see [Download the VM configuration](#download-the-vm-configuration) section
+
 # How to run the code
 
-- `git clone <link to the repo>` or download the repo.
-- newsdata.zip contains data for this project, look [Data](#data) for setup
-- This project also uses VirtualBox and Vagrant, see [VirtualBox](#install-virtualbox) and [Vagrant](#install-vagrant) sections
+- Fork and clone the repository https://github.com/adityamehra/log-analysis or download the repository.
+- Install the prerequisites
+- Setup the data
+- Data is contained in newsdata.zip, look in [Data](#data) section for setting up the data.
+- Use the command 'python log_analysis_db.py' to get the results
 
 # Data
 
@@ -34,7 +42,7 @@ __Windows users__ The Installer may ask you to grant network permissions to Vagr
 
 ## Download the VM configuration
 
-You can use Github to fork and clone the repository https://github.com/udacity/fullstack-nanodegree-vm.
+You can use Github to fork and clone the repository https://github.com/udacity/fullstack-nanodegree-vm or download the repository.
 
 You will end up with a new directory containing the VM files. Change to this directory in your terminal with `cd`. Inside, you will find another directory called __vagrant__. Change directory to the __vagrant__ directory.
 
