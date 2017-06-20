@@ -35,13 +35,12 @@ def reporting():
         print author[1] + " - " + str(author[0]) + " views"
 
     print ""
-    cur.execute(("select cast(log.time as date), (count(*) "
-                 "filter "
+    cur.execute(("select cast(log.time as date), (count(*) filter "
                  "(where log.status = '404 NOT FOUND') * 100.0 / count(*)) "
-                 "as error "
-                 "from log group by cast(log.time as date) "
+                 "as error from log group by cast(log.time as date) "
                  "having (count(*) filter "
-                 "(where log.status = '404 NOT FOUND') * 100.0 / count(*)) > 1"))
+                 "(where log.status = '404 NOT FOUND') * 100.0 / count(*)) "
+                 "> 1"))
     buggy_days = cur.fetchall()
 
     if len(buggy_days) == 1:
@@ -49,7 +48,8 @@ def reporting():
     else:
         print "Days on which more than 1% of requests lead to errors"
     for item in buggy_days:
-        print item[0].strftime("%b, %d %Y -")+" "+str(round(item[1], 2))+"% errors"
+        print item[0].strftime("%b %d, %Y -") \
+              + " " + str(round(item[1], 2)) + "% errors"
 
     db.close()
 

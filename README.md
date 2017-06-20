@@ -1,3 +1,5 @@
+This tutorial is taken from Udacity's Full Stack Web Developer Nanodegree.
+
 # Prerequisites
 
 - VirtualBox, see [VirtualBox](#install-virtualbox) section
@@ -9,7 +11,7 @@
 - Fork and clone the repository https://github.com/adityamehra/log-analysis or download the repository.
 - Install the prerequisites
 - Setup the data
-- Data is contained in newsdata.zip, look in [Data](#data) section for setting up the data.
+- Data is in newsdata.zip, see [Data](#data) section for setting up the data.
 - Use the command 'python log_analysis_db.py' to get the results
 
 # Data
@@ -24,6 +26,22 @@ Here's what this command does:
 - `-f newsdata.sql` — run the SQL statements in the file newsdata.sql
 
 Running this command will connect to your installed database server and execute the SQL commands in the downloaded file, creating tables and populating them with data.
+
+## Explore the data
+Once you have the data loaded into your database, connect to your database using `psql -d news` and explore the tables using the `\dt` and `\d` table commands and select statements.
+
+- \dt — display tables — lists the tables that are available in the database.
+- \d table — (replace table with the name of a table) — shows the database schema for that particular table.
+
+Get a sense for what sort of information is in each column of these tables.
+
+The database includes three tables:
+
+- The __authors__ table includes information about the authors of articles.
+- The __articles__ table includes the articles themselves.
+- The __log__ table includes one entry for each time a user has accessed the site.
+
+As you explore the data, you may find it useful to take notes! Don't try to memorize all the columns. Instead, write down a description of the column names and what kind of values are found in those columns.
 
 # How to setup VirtualBox and Vagrant
 
